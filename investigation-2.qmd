@@ -95,7 +95,7 @@ hist(tasks,
      breaks = 50)
 ```
 <!-- Your written summary goes below this line. -->
-The distribution of daily tasks is roughly normal, centered at a mean of `r round(mean(tasks), 2)` tasks with a standard deviation of `r round(sd(tasks), 2)` tasks, indicating substantial day-to-day variation. The middle 50 percent of days range from `r round(quantile(tasks, 0.25), 2)` to `r round(quantile(tasks, 0.75), 2)` tasks.
+The distribution is roughly normal, centered at a mean of `r round(mean(tasks), 2)` tasks with a standard deviation of `r round(sd(tasks), 2)` tasks, indicating substantial day to day variation. The middle 50 percent of days range from `r round(quantile(tasks, 0.25), 2)` to `r round(quantile(tasks, 0.75), 2)` tasks.
 
 
 ### 4. Calculate and interpret a 95% confidence interval for the probability that more than 500 tasks are submitted in a day.
@@ -104,7 +104,7 @@ The distribution of daily tasks is roughly normal, centered at a mean of `r roun
 prop.test(sum(tasks > 500), length(tasks))$conf.int
 ```
 <!-- Your written interpretation goes below this line. -->
-A 95 percent confidence interval for the probability of more than 500 tasks submitted daily is (`r round(prop.test(sum(tasks > 500), length(tasks))$conf.int[1], 4)` to `r round(prop.test(sum(tasks > 500), length(tasks))$conf.int[2], 4)`). This means we are 95 percent confident the true probability falls between these values.
+The 95 percent confidence interval for the probability for more than 500 tasks submitted daily is (`r round(prop.test(sum(tasks > 500), length(tasks))$conf.int[1], 4)` to `r round(prop.test(sum(tasks > 500), length(tasks))$conf.int[2], 4)`). This means that we are 95 percent confident the true probability falls between these values.
 
 
 ### 5. Calculate and interpret a 95% confidence interval for the mean number of tasks submitted in a day. Also comment on whether this interval is consistent with the common-sense answer from earlier.
@@ -114,7 +114,7 @@ t.test(tasks)$conf.int
 ```
 
 <!-- Your written summary goes below this line. -->
-A 95 percent confidence interval for the mean daily tasks is (`r round(t.test(tasks)$conf.int[1], 2)` to `r round(t.test(tasks)$conf.int[2], 2)`) tasks. This matches the expected value of 487.5 tasks since that value lies within the interval.
+A 95 percent confidence interval for the mean daily tasks is (`r round(t.test(tasks)$conf.int[1], 2)` to `r round(t.test(tasks)$conf.int[2], 2)`) tasks. This is the same as the expected value of 487.5 tasks since that value lies within the interval.
 
 
 ### 6. Calculate a 95% confidence interval for the standard deviation of the number of tasks submitted in a day.
